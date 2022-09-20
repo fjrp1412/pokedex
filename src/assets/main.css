@@ -1,35 +1,45 @@
-@import "./base.css";
+@import "./normalize.css";
+@import "./fonts/stylesheet.css";
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+:root {
+  --third: #f5db13;
+  --primary: #f2b807;
+  --second: #f28f16;
+  --danger: #d93e30;
+  --stile-dark-rock: #a1a1a1;
+  --grass-bug: #70a83b;
+  --ice-water: #a2cff0;
+  --fire-fighting-dragon: #f76545;
+  --normal-ghost: #76aadb;
+  --posion-psychic-fairy-ghost: #a974bc;
+  --ground: #9b897b;
+  --electric: #f7c545;
+  --paragraph: 16px;
+}
+* {
+  font-family: 'Karla', 'Courier New';
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+h1 {
+  font-size: 72px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+h2 {
+  font-size: 64px;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+h3 {
+  font-size: 36px;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+h6 {
+  font-size: 12px;
 }
