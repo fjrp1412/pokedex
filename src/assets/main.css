@@ -6,7 +6,7 @@
   --primary: #f2b807;
   --second: #f28f16;
   --danger: #d93e30;
-  --white: #F6F7F9;
+  --white: #f6f7f9;
   --dark: #212121;
   --stile-dark-rock: #a1a1a1;
   --grass-bug: #70a83b;
@@ -16,10 +16,16 @@
   --posion-psychic-fairy-ghost: #a974bc;
   --ground: #9b897b;
   --electric: #f7c545;
+  --yellow-gradient: linear-gradient(
+    to bottom,
+    rgba(245, 219, 19, 1),
+    rgba(242, 184, 7, 1)
+  );
+
   --paragraph: 16px;
 }
 * {
-  font-family: 'Karla', 'Courier New';
+  font-family: "Karla", "Courier New";
 }
 
 html {
@@ -35,7 +41,7 @@ h2 {
 }
 
 h3 {
-  font-size: 3.6rem;;
+  font-size: 3.6rem;
 }
 
 h4 {
@@ -48,4 +54,14 @@ h5 {
 
 h6 {
   font-size: 1.2rem;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
