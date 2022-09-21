@@ -45,6 +45,7 @@ window.addEventListener("resize", () => {
   align-items: center;
   width: 100%;
   height: 80px;
+  position: relative;
   background-color: var(--third);
   box-shadow: 1px 7px 12px 2px rgba(1, 28, 64, 0.32);
   -webkit-box-shadow: 1px 7px 12px 2px rgba(1, 28, 64, 0.32);
