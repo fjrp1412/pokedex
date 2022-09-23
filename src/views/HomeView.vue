@@ -127,13 +127,16 @@ import Button from "@components/Button/ButtonComponent.vue";
 }
 
 @media only screen and (min-width: 875px) {
+  #main .images-container {
+    display: contents;
+  }
   #main .images-container .pikachu {
     width: 400px;
   }
   #main .images-container .red-white-pokeball {
     width: fit-content;
     position: absolute;
-    left: 30%;
+    left: 70%;
     top: -20%;
   }
 }
