@@ -4,7 +4,12 @@
       <img src="../../assets/imgs/logo.svg" alt="pokemon" class="logo" />
     </div>
     <div class="nav-container">
-      <div class="nav__burguer" v-if="deviceSize < 770">
+      <div
+        class="nav__burguer"
+        v-if="deviceSize < 770"
+        @click="toggleModal"
+        id="menu"
+      >
         <img
           src="../../assets/imgs/burguer-menu.svg"
           alt="burguer menu"
@@ -18,6 +23,20 @@
         <div class="nav__option"><a href=""> Legendaries</a></div>
         <div class="nav__option"><a href="">Documentation</a></div>
       </div>
+
+      <ModalComponent :show="showModal" :toggleShow="toggleModal">
+        <div class="modal-menu__container">
+          <div class="logo-container">
+            <img src="../../assets/imgs/logo.svg" alt="pokemon" class="logo" />
+          </div>
+          <div class="modal-menu__menu">
+            <div class="nav__option"><a href="">Home</a></div>
+            <div class="nav__option"><a href="">Pokedex</a></div>
+            <div class="nav__option"><a href=""> Legendaries</a></div>
+            <div class="nav__option selected"><a href="">Documentation</a></div>
+          </div>
+        </div>
+      </ModalComponent>
     </div>
   </header>
 </template>
@@ -30,8 +49,14 @@ export default {
 
 <script setup>
 import { ref } from "vue";
+import ModalComponent from "@components/Modal/ModalComponent.vue";
 
 const deviceSize = ref(window.innerWidth);
+const showModal = ref(false);
+
+const toggleModal = () => {
+  showModal.value = !showModal.value;
+};
 
 window.addEventListener("resize", () => {
   deviceSize.value = window.innerWidth;
@@ -96,6 +121,40 @@ window.addEventListener("resize", () => {
 }
 #header .nav-container .nav__menu .selected {
   border-bottom: 2px solid black;
+}
+
+.modal-menu__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modal-menu__container .logo-container {
+  width: fit-content;
+  margin-bottom: 40px;
+}
+
+.modal-menu__container .logo-container .logo {
+  width: 150px;
+}
+
+.modal-menu__container .modal-menu__menu .nav__option {
+  width: 100%;
+  margin: 20px 0px;
+  text-align: center;
+}
+
+.modal-menu__container .modal-menu__menu .nav__option a {
+  font-size: 2.4rem;
+  text-decoration: none;
+  font-weight: bolder;
+  color: var(--dark);
+}
+.modal-menu__container .modal-menu__menu .selected {
+  background-color: rgba(242, 143, 22, 1);
+  border-radius: 25px;
+  padding: 0px 5px;
 }
 
 /* Tablet device*/
