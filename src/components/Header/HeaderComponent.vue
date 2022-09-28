@@ -18,10 +18,18 @@
       </div>
 
       <div class="nav__menu" v-else>
-        <div class="nav__option selected"><a href="">Home</a></div>
-        <div class="nav__option"><a href="">Pokedex</a></div>
-        <div class="nav__option"><a href=""> Legendaries</a></div>
-        <div class="nav__option"><a href="">Documentation</a></div>
+        <div class="nav__option selected">
+          <router-link :to="{ name: 'home' }">Home</router-link>
+        </div>
+        <div class="nav__option">
+          <router-link :to="{ name: 'pokedex' }">Pokedex</router-link>
+        </div>
+        <div class="nav__option">
+          <router-link to="/legendaries"> Legendaries</router-link>
+        </div>
+        <div class="nav__option">
+          <router-link to="">Documentation</router-link>
+        </div>
       </div>
 
       <ModalComponent :show="showModal" :toggleShow="toggleModal">
@@ -30,10 +38,32 @@
             <img src="../../assets/imgs/logo.svg" alt="pokemon" class="logo" />
           </div>
           <div class="modal-menu__menu">
-            <div class="nav__option"><a href="">Home</a></div>
-            <div class="nav__option"><a href="">Pokedex</a></div>
-            <div class="nav__option"><a href=""> Legendaries</a></div>
-            <div class="nav__option selected"><a href="">Documentation</a></div>
+            <div
+              :class="`nav__option ${
+                this.$route.name === 'home' && 'selected'
+              }`"
+            >
+              <router-link :to="{ name: 'home' }">Home</router-link>
+            </div>
+
+            <div
+              :class="`nav__option ${
+                this.$route.name === 'pokedex' && 'selected'
+              }`"
+            >
+              <router-link :to="{ name: 'pokedex' }">Pokedex</router-link>
+            </div>
+
+            <div
+              :class="`nav__option ${
+                this.$route.name === 'legendaries' && 'selected'
+              }`"
+            >
+              <router-link to="/legendaries"> Legendaries</router-link>
+            </div>
+            <div :class="`nav__option`">
+              <router-link to="">Documentation</router-link>
+            </div>
           </div>
         </div>
       </ModalComponent>
