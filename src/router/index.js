@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import HomeView from "@views/HomeView.vue";
+import PokedexView from "@views/PokedexView.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -12,6 +13,11 @@ const router = createRouter({
     {
       path: "/home",
       redirect: { name: "home" },
+    },
+    {
+      path: "/pokedex",
+      component: PokedexView,
+      name: "pokedex",
     },
   ],
 });
