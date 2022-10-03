@@ -12,29 +12,9 @@
           <div class="search-container__filters"></div>
         </div>
         <div class="gallery">
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
+          <div class="item">
+            <PokeCard></PokeCard>
+          </div>
           <div class="item"></div>
           <div class="item"></div>
           <div class="item"></div>
@@ -54,6 +34,7 @@ export default {
 
 <script setup>
 import LayoutComponent from "@components/Layout/LayoutComponent.vue";
+import PokeCard from "@components/PokeCard/PokeCard.vue";
 </script>
 
 <style scoped>
