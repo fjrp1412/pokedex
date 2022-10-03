@@ -52,9 +52,12 @@ import Button from "@components/Button/ButtonComponent.vue";
 <style scoped>
 #main {
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
+  background: var(--yellow-gradient);
+  padding-bottom: 20px;
 }
 #main .images-container {
   margin-top: 80px;

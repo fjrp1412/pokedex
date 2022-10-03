@@ -20,12 +20,9 @@ import FooterComponent from "@components/Footer/FooterComponent.vue";
 <style scoped>
 #layout {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  justify-content: space-between;
-  height: 100%;
-  background: var(--yellow-gradient);
+  min-height: 100vh;
 }
 </style>

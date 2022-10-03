@@ -30,6 +30,15 @@
 
 html {
   font-size: 62.5%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+#app {
+  min-height: 100%;
 }
 
 h1 {

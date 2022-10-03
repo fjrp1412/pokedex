@@ -23,8 +23,9 @@ export default {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  margin-top: 40px;
-  padding-bottom: 10px;
+  height: auto;
+  padding-top: 10px;
+  background: var(--yellow-gradient);
 }
 
 #footer .footer-title .title {
