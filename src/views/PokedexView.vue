@@ -12,14 +12,13 @@
           <div class="search-container__filters"></div>
         </div>
         <div class="gallery">
-          <div class="item">
-            <PokeCard></PokeCard>
+          <div
+            class="item"
+            v-for="pokemon in pokeList.results"
+            :key="pokemon.id"
+          >
+            <PokeCard :pokemonURL="pokemon.url"></PokeCard>
           </div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
         </div>
       </main>
     </template>
@@ -33,8 +32,19 @@ export default {
 </script>
 
 <script setup>
+import { onBeforeMount, ref } from "vue";
 import LayoutComponent from "@components/Layout/LayoutComponent.vue";
 import PokeCard from "@components/PokeCard/PokeCard.vue";
+import { GET } from "@utils/api";
+
+const pokeList = ref([]);
+onBeforeMount(async () => {
+  const { data } = await GET({
+    url: "pokemon/",
+    query: { limit: 12 },
+  });
+  pokeList.value = data;
+});
 </script>
 
 <style scoped>
@@ -71,14 +81,13 @@ import PokeCard from "@components/PokeCard/PokeCard.vue";
   display: grid;
   width: 100%;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 350px));
-  grid-auto-rows: minmax(140px, 150px);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  grid-auto-rows: minmax(160px, auto);
+  gap: 50px;
   margin: 20px 0px;
 }
 
 .content-container .gallery .item {
-  border: 1px solid red;
   width: 100%;
 }
 </style>
