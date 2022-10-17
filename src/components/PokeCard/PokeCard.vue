@@ -1,6 +1,6 @@
 <template>
   <div class="card-container">
-    <h4 class="card-container__title">{{ pokemon?.name }}</h4>
+    <h4 class="card-container__title">{{ capitalizeName }}</h4>
 
     <div class="card-container__stats">
       <div class="stat" v-for="stat in filtPokemonStats" :key="stat.name">
@@ -35,6 +35,12 @@ onBeforeMount(async () => {
   const url = pokemonURL.value.replace("https://pokeapi.co/api/v2/", "");
   const { data } = await GET({ url });
   pokemon.value = { ...data };
+});
+
+const capitalizeName = computed(() => {
+  return (
+    pokemon.value?.name.charAt(0).toUpperCase() + pokemon.value?.name.slice(1)
+  );
 });
 
 const filtPokemonStats = computed(() => {
